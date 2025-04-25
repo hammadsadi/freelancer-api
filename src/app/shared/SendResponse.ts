@@ -1,4 +1,4 @@
-import { Response } from "express";
+import { Response } from 'express';
 
 const sendResponse = <T>(
   res: Response,
@@ -12,7 +12,7 @@ const sendResponse = <T>(
       total: number;
     };
     data: T | null | undefined;
-  }
+  },
 ) => {
   res.status(jsonData.statusCode).json({
     success: jsonData.success,

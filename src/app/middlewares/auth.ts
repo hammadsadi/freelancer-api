@@ -1,10 +1,10 @@
-import { NextFunction, Request, Response } from "express";
-import { JWTHelper } from "../utils/jwtHelper";
-import config from "../config";
-import { Secret } from "jsonwebtoken";
-import { UserStatus } from "@prisma/client";
-import ApiError from "../errors/ApiError";
-import status from "http-status";
+import { NextFunction, Request, Response } from 'express';
+import { JWTHelper } from '../utils/jwtHelper';
+import config from '../config';
+import { Secret } from 'jsonwebtoken';
+import { UserStatus } from '@prisma/client';
+import ApiError from '../errors/ApiError';
+import status from 'http-status';
 
 const auth = (...roles: string[]) => {
   return (req: Request & { user?: any }, res: Response, next: NextFunction) => {
@@ -13,12 +13,12 @@ const auth = (...roles: string[]) => {
 
       // Check Token
       if (!token) {
-        throw new ApiError(status.UNAUTHORIZED, "You are not authorized!");
+        throw new ApiError(status.UNAUTHORIZED, 'You are not authorized!');
       }
       // Verify Token
       const verifyUser = JWTHelper.tokenVerify(
         token,
-        config.JWT.JWT_SECRET as Secret
+        config.JWT.JWT_SECRET as Secret,
       );
       // // Check Account Status
       // if (
@@ -30,7 +30,7 @@ const auth = (...roles: string[]) => {
 
       //  Check Role
       if (roles.length && !roles.includes(verifyUser.role)) {
-        throw new ApiError(status.FORBIDDEN, "Forbidden!");
+        throw new ApiError(status.FORBIDDEN, 'Forbidden!');
       }
       req.user = verifyUser;
       next();
