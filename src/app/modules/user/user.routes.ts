@@ -8,9 +8,16 @@ const userRouter = Router();
 
 // Create User
 userRouter.post(
-  '/',
+  '/create',
   validatedRequest(UserValidation.userCreateValidation),
   UserControllers.userCreate,
+);
+
+// Create User
+userRouter.post(
+  '/login',
+  validatedRequest(UserValidation.userLoginValidation),
+  UserControllers.loginUser,
 );
 
 // Export Routes

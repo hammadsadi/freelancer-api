@@ -50,6 +50,25 @@ const userLogin = async (payload: { email: string; password: string }) => {
   if (!existUser) {
     throw new ApiError(status.BAD_REQUEST, 'Invalid Credentials!');
   }
+
+  // Match Password
+  const passwordMatch: boolean = await bcrypt.compare(
+    payload?.password,
+    existUser.password,
+  );
+  if (!passwordMatch) {
+    throw new ApiError(status.BAD_REQUEST, 'Invalid Credentials!');
+  }
+
+  const token = await JWTHelper.generateToken(
+    {
+      email: existUser.email,
+      name: existUser.name,
+    },
+    config.JWT.JWT_SECRET as string,
+    config.JWT.JWT_EXPIRES_IN as string,
+  );
+  return { token };
 };
 export const UserServices = {
   userSaveToDB,

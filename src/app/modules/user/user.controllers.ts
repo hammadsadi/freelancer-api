@@ -29,6 +29,30 @@ const userCreate = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+/**
+ * @Method POST
+ * @Dsc USER Login
+ * @Params '
+ * @Return Data
+ */
+const loginUser = catchAsync(async (req: Request, res: Response) => {
+  const result = await UserServices.userLogin(req.body);
+  //   Token Set
+  res.cookie('freelance_token', result?.token, {
+    secure: config.NODE_ENV === 'production',
+    httpOnly: true,
+    sameSite: 'none',
+    maxAge: 1000 * 60 * 60 * 24 * 10,
+  });
+  sendResponse(res, {
+    statusCode: status.OK,
+    success: true,
+    message: 'User Login Successful',
+    data: result,
+  });
+});
+
 export const UserControllers = {
   userCreate,
+  loginUser,
 };
