@@ -28,6 +28,7 @@ const userSaveToDB = async (payload: User) => {
 
   const token = await JWTHelper.generateToken(
     {
+      userId: user.id,
       email: user.email,
       name: user.name,
     },
@@ -62,6 +63,7 @@ const userLogin = async (payload: { email: string; password: string }) => {
 
   const token = await JWTHelper.generateToken(
     {
+      userId: existUser.id,
       email: existUser.email,
       name: existUser.name,
     },
