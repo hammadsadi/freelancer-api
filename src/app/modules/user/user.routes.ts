@@ -2,9 +2,13 @@ import { Router } from 'express';
 import { UserControllers } from './user.controllers';
 import { UserValidation } from './user.validation';
 import validatedRequest from '../../shared/validatedRequest';
+import auth from '../../middlewares/auth';
 
 // Init Route
 const userRouter = Router();
+
+// Me
+userRouter.get('/me', auth, UserControllers.loggedInUserInfo);
 
 // Create User
 userRouter.post(

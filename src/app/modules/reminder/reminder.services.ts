@@ -51,10 +51,17 @@ const reminderCreate = async (userInfo: any, payload: Reminder) => {
 
 // Get All Reminder From DB
 const getAllReminderFromDB = async (userInfo: any) => {
+  const today = new Date();
+  const sevenDaysLater = new Date();
+  sevenDaysLater.setDate(today.getDate() + 7);
   // Get Reminder Data
   const allReminder = await prisma.reminder.findMany({
     where: {
       userId: userInfo.userId,
+      dueDate: {
+        gte: today,
+        lt: sevenDaysLater,
+      },
     },
   });
   return allReminder;

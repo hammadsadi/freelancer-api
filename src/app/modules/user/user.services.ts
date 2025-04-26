@@ -72,7 +72,19 @@ const userLogin = async (payload: { email: string; password: string }) => {
   );
   return { token };
 };
+
+// Me
+const me = async (userInfo: any) => {
+  const user = prisma.user.findUnique({
+    where: {
+      id: userInfo.userId,
+    },
+  });
+
+  return user;
+};
 export const UserServices = {
   userSaveToDB,
   userLogin,
+  me,
 };

@@ -16,9 +16,9 @@ const userCreate = catchAsync(async (req: Request, res: Response) => {
 
   //   Token Set
   res.cookie('freelance_token', result?.token, {
-    secure: config.NODE_ENV === 'production',
+    secure: false,
     httpOnly: true,
-    sameSite: 'none',
+    sameSite: 'lax',
     maxAge: 1000 * 60 * 60 * 24 * 10,
   });
   sendResponse(res, {
@@ -52,7 +52,25 @@ const loginUser = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+/**
+ * @Method Get
+ * @Dsc Logged In User info Get
+ * @Params
+ * @Return Data
+ */
+const loggedInUserInfo = catchAsync(
+  async (req: Request & { user?: any }, res: Response) => {
+    const result = await UserServices.me(req.user);
+    sendResponse(res, {
+      statusCode: status.OK,
+      success: true,
+      message: 'User Fetched Successful',
+      data: result,
+    });
+  },
+);
 export const UserControllers = {
   userCreate,
   loginUser,
+  loggedInUserInfo,
 };

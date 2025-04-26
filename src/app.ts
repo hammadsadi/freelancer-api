@@ -8,7 +8,13 @@ const app: Application = express();
 
 //  Parser
 app.use(express.json());
-app.use(cors());
+app.use(cookieParser());
+app.use(
+  cors({
+    origin: ['http://localhost:5173'],
+    credentials: true,
+  }),
+);
 
 // Test Route
 app.get('/', (req: Request, res: Response) => {
