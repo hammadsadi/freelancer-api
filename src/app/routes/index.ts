@@ -3,6 +3,7 @@ import { UserRoutes } from '../modules/user/user.routes';
 import { ClientRoutes } from '../modules/client/client.routes';
 import { ProjectRoutes } from '../modules/project/project.routes';
 import { InterActionLogRoutes } from '../modules/interactionLog/interactionLog.routes';
+import { ReminderRoutes } from '../modules/reminder/reminder.routes';
 
 const router = Router();
 // Module Routes Info
@@ -22,6 +23,10 @@ const moduleRoutes = [
   {
     path: '/log',
     route: InterActionLogRoutes,
+  },
+  {
+    path: '/reminder',
+    route: ReminderRoutes,
   },
 ];
 
