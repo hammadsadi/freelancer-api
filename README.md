@@ -65,13 +65,13 @@ npx prisma migrate dev --name init
 http://localhost:5000
 ```
 
-## Entity Relationship Diagram (ERD)
+## :hammer_and_wrench: Entity Relationship Diagram (ERD)
 
 - The ERD is available in the ./src/app/assets folder.
 
 - It shows the relationships between User, Client, Project, InteractionLog, and Reminder models.
 
-## Project Features
+## :hash: Project Features
 
 - User Management (Register, Login)
 
@@ -83,7 +83,7 @@ http://localhost:5000
 
 - Reminders (for Clients and Projects)
 
-# API Documentation
+# :page_facing_up: API Documentation
 
 The API endpoints are documented in the attached Postman Collection.
 
