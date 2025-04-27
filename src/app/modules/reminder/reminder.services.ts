@@ -1,4 +1,4 @@
-import { Client, InteractionLog, Project, Reminder } from '@prisma/client';
+import { Reminder } from '@prisma/client';
 import prisma from '../../shared/prisma';
 import ApiError from '../../errors/ApiError';
 import status from 'http-status';

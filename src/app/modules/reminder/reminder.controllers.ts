@@ -2,9 +2,6 @@ import { Request, Response } from 'express';
 import catchAsync from '../../shared/catchAsync';
 import sendResponse from '../../shared/SendResponse';
 import status from 'http-status';
-import { ClientServices } from '../client/client.services';
-import { ProjectServices } from '../project/project.services';
-import { InterActionLogServices } from '../interactionLog/interactionLog.services';
 import { ReminderServices } from './reminder.services';
 
 /**

@@ -5,6 +5,7 @@ import ApiError from '../../errors/ApiError';
 import status from 'http-status';
 import { JWTHelper } from '../../shared/jwtHelper';
 import config from '../../config';
+import { ITokenUser } from '../../interface';
 
 // User Save to DB
 const userSaveToDB = async (payload: User) => {
@@ -74,7 +75,7 @@ const userLogin = async (payload: { email: string; password: string }) => {
 };
 
 // Me
-const me = async (userInfo: any) => {
+const me = async (userInfo: ITokenUser) => {
   const user = prisma.user.findUnique({
     where: {
       id: userInfo.userId,

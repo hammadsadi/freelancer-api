@@ -1,8 +1,6 @@
 import { Router } from 'express';
 import validatedRequest from '../../shared/validatedRequest';
 import auth from '../../middlewares/auth';
-import { InterActionLogControllers } from '../interactionLog/interactionLog.controllers';
-import { LogValidations } from '../interactionLog/interactionLog.validation';
 import { ReminderValidations } from './reminder.validation';
 import { ReminderControllers } from './reminder.controllers';
 

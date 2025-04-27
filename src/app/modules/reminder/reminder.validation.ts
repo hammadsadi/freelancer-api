@@ -1,4 +1,3 @@
-import { LogType, ProjectStatus } from '@prisma/client';
 import { z } from 'zod';
 
 // Reminder Create Validation
