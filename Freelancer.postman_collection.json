@@ -1,0 +1,827 @@
+{
+	"info": {
+		"_postman_id": "4507f200-7b94-4c5e-a8d8-fd80dfc2da51",
+		"name": "Freelancer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36346928"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "CREATE USER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Sadi\",\n    \"email\": \"sadi@yahoo.com\",\n    \"password\": \"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/user/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN USER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"hammadw7@yahoo.com\",\n    \"password\": \"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ME",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4ZjBiYWZkZC04MzkyLTRhMjUtOThjNS0yMTAyYTdjN2IxZDEiLCJlbWFpbCI6InNhZGlAeWFob28uY29tIiwibmFtZSI6IlNhZGkiLCJpYXQiOjE3NDU2OTMwMzgsImV4cCI6MTc0ODI4NTAzOH0.H1OVCbEDDPxefQhl79BKUxOANm0wmUstJge_6AL-VLA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"hammadw7@yahoo.com\",\n    \"password\": \"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/user/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "CREATE CLIENT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZTk0MjFmNi02NzU3LTQzYTgtYTE2NS1kZmU3NDk2NmY3MzMiLCJlbWFpbCI6ImhhbW1hZHc3QHlhaG9vLmNvbSIsIm5hbWUiOiJIYW1tYWQgU2FkaSIsImlhdCI6MTc0NTY1MzYyNCwiZXhwIjoxNzQ4MjQ1NjI0fQ.18dU0louWKDYvwGmvNHX-gCe3gQqIh2NbxuzkambTGA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Client-7\",\n    \"email\": \"client7@yahoo.com\",\n    \"phone\": \"12345\",\n    \"company\": \"TSC\",\n    \"notes\": \"something..1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/client/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"client",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE CLIENT",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZTk0MjFmNi02NzU3LTQzYTgtYTE2NS1kZmU3NDk2NmY3MzMiLCJlbWFpbCI6ImhhbW1hZHc3QHlhaG9vLmNvbSIsIm5hbWUiOiJIYW1tYWQgU2FkaSIsImlhdCI6MTc0NTY1MzYyNCwiZXhwIjoxNzQ4MjQ1NjI0fQ.18dU0louWKDYvwGmvNHX-gCe3gQqIh2NbxuzkambTGA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Client-2 updated\"\n    // \"email\": \"client-2@yahoo.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/client/6d21dfdc-04ee-430e-956d-47a453eab627",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"client",
+								"6d21dfdc-04ee-430e-956d-47a453eab627"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET CLIENTS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZTk0MjFmNi02NzU3LTQzYTgtYTE2NS1kZmU3NDk2NmY3MzMiLCJlbWFpbCI6ImhhbW1hZHc3QHlhaG9vLmNvbSIsIm5hbWUiOiJIYW1tYWQgU2FkaSIsImlhdCI6MTc0NTY1MzYyNCwiZXhwIjoxNzQ4MjQ1NjI0fQ.18dU0louWKDYvwGmvNHX-gCe3gQqIh2NbxuzkambTGA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Client-2 updated\"\n    // \"email\": \"client-2@yahoo.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/client/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"client",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET SINGLE CLIENTS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZTk0MjFmNi02NzU3LTQzYTgtYTE2NS1kZmU3NDk2NmY3MzMiLCJlbWFpbCI6ImhhbW1hZHc3QHlhaG9vLmNvbSIsIm5hbWUiOiJIYW1tYWQgU2FkaSIsImlhdCI6MTc0NTY1MzYyNCwiZXhwIjoxNzQ4MjQ1NjI0fQ.18dU0louWKDYvwGmvNHX-gCe3gQqIh2NbxuzkambTGA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Client-2 updated\"\n    // \"email\": \"client-2@yahoo.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/client/d5da043b-06ef-4805-b73b-5c9a5c2fecef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"client",
+								"d5da043b-06ef-4805-b73b-5c9a5c2fecef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE SINGLE CLIENT",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZTk0MjFmNi02NzU3LTQzYTgtYTE2NS1kZmU3NDk2NmY3MzMiLCJlbWFpbCI6ImhhbW1hZHc3QHlhaG9vLmNvbSIsIm5hbWUiOiJIYW1tYWQgU2FkaSIsImlhdCI6MTc0NTY1MzYyNCwiZXhwIjoxNzQ4MjQ1NjI0fQ.18dU0louWKDYvwGmvNHX-gCe3gQqIh2NbxuzkambTGA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Client-2 updated\"\n    // \"email\": \"client-2@yahoo.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/client/6d21dfdc-04ee-430e-956d-47a453eab627",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"client",
+								"6d21dfdc-04ee-430e-956d-47a453eab627"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "CREATE PROJECT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZTk0MjFmNi02NzU3LTQzYTgtYTE2NS1kZmU3NDk2NmY3MzMiLCJlbWFpbCI6ImhhbW1hZHc3QHlhaG9vLmNvbSIsIm5hbWUiOiJIYW1tYWQgU2FkaSIsImlhdCI6MTc0NTY1MzYyNCwiZXhwIjoxNzQ4MjQ1NjI0fQ.18dU0louWKDYvwGmvNHX-gCe3gQqIh2NbxuzkambTGA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"clientId\": \"5d7c2375-1317-44a5-9cca-bfc9dfbe1f52\",\n  \"title\": \"New Website Development\",\n  \"budget\": 50000,\n  \"deadline\": \"2025-08-31T23:59:59Z\",\n  \"status\": \"IN_PROGRESS\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/project/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"project",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL PROJECTS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZTk0MjFmNi02NzU3LTQzYTgtYTE2NS1kZmU3NDk2NmY3MzMiLCJlbWFpbCI6ImhhbW1hZHc3QHlhaG9vLmNvbSIsIm5hbWUiOiJIYW1tYWQgU2FkaSIsImlhdCI6MTc0NTY1MzYyNCwiZXhwIjoxNzQ4MjQ1NjI0fQ.18dU0louWKDYvwGmvNHX-gCe3gQqIh2NbxuzkambTGA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"clientId\": \"5d7c2375-1317-44a5-9cca-bfc9dfbe1f52\",\n  \"title\": \"New Website Development\",\n  \"budget\": 50000,\n  \"deadline\": \"2025-08-31T23:59:59Z\",\n  \"status\": \"IN_PROGRESS\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/project/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"project",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET SINGLE PROJECT",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZTk0MjFmNi02NzU3LTQzYTgtYTE2NS1kZmU3NDk2NmY3MzMiLCJlbWFpbCI6ImhhbW1hZHc3QHlhaG9vLmNvbSIsIm5hbWUiOiJIYW1tYWQgU2FkaSIsImlhdCI6MTc0NTY1MzYyNCwiZXhwIjoxNzQ4MjQ1NjI0fQ.18dU0louWKDYvwGmvNHX-gCe3gQqIh2NbxuzkambTGA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"clientId\": \"5d7c2375-1317-44a5-9cca-bfc9dfbe1f52\",\n  \"title\": \"New Website Development\",\n  \"budget\": 50000,\n  \"deadline\": \"2025-08-31T23:59:59Z\",\n  \"status\": \"IN_PROGRESS\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/project/854d4e6c-3034-45d9-a666-fdfd9c0091ef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"project",
+								"854d4e6c-3034-45d9-a666-fdfd9c0091ef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE SINGLE PROJECT",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZTk0MjFmNi02NzU3LTQzYTgtYTE2NS1kZmU3NDk2NmY3MzMiLCJlbWFpbCI6ImhhbW1hZHc3QHlhaG9vLmNvbSIsIm5hbWUiOiJIYW1tYWQgU2FkaSIsImlhdCI6MTc0NTY1MzYyNCwiZXhwIjoxNzQ4MjQ1NjI0fQ.18dU0louWKDYvwGmvNHX-gCe3gQqIh2NbxuzkambTGA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"clientId\": \"5d7c2375-1317-44a5-9cca-bfc9dfbe1f52\",\n  \"title\": \"New Website Development\",\n  \"budget\": 50000,\n  \"deadline\": \"2025-08-31T23:59:59Z\",\n  \"status\": \"IN_PROGRESS\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/project/854d4e6c-3034-45d9-a666-fdfd9c0091ef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"project",
+								"854d4e6c-3034-45d9-a666-fdfd9c0091ef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE SINGLE PROJECT",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZTk0MjFmNi02NzU3LTQzYTgtYTE2NS1kZmU3NDk2NmY3MzMiLCJlbWFpbCI6ImhhbW1hZHc3QHlhaG9vLmNvbSIsIm5hbWUiOiJIYW1tYWQgU2FkaSIsImlhdCI6MTc0NTY1MzYyNCwiZXhwIjoxNzQ4MjQ1NjI0fQ.18dU0louWKDYvwGmvNHX-gCe3gQqIh2NbxuzkambTGA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"PENDING\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/project/d0725a0c-d42c-4326-b714-1ea054c0e1a3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"project",
+								"d0725a0c-d42c-4326-b714-1ea054c0e1a3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Logs",
+			"item": [
+				{
+					"name": "CREATE LOG",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZTk0MjFmNi02NzU3LTQzYTgtYTE2NS1kZmU3NDk2NmY3MzMiLCJlbWFpbCI6ImhhbW1hZHc3QHlhaG9vLmNvbSIsIm5hbWUiOiJIYW1tYWQgU2FkaSIsImlhdCI6MTc0NTY1MzYyNCwiZXhwIjoxNzQ4MjQ1NjI0fQ.18dU0louWKDYvwGmvNHX-gCe3gQqIh2NbxuzkambTGA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"clientId\": \"f9b1bf53-fb14-46c3-9fe3-de2a4e248ba1\", \n  \"projectId\": \"d0725a0c-d42c-4326-b714-1ea054c0e1a3\",\n  \"date\": \"2025-05-01T14:00:00Z\",\n  \"type\": \"CALL\", \n  \"notes\": \"SADiscussed project requirements and timeline.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/log/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"log",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL LOGS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZTk0MjFmNi02NzU3LTQzYTgtYTE2NS1kZmU3NDk2NmY3MzMiLCJlbWFpbCI6ImhhbW1hZHc3QHlhaG9vLmNvbSIsIm5hbWUiOiJIYW1tYWQgU2FkaSIsImlhdCI6MTc0NTY1MzYyNCwiZXhwIjoxNzQ4MjQ1NjI0fQ.18dU0louWKDYvwGmvNHX-gCe3gQqIh2NbxuzkambTGA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"clientId\": \"f9b1bf53-fb14-46c3-9fe3-de2a4e248ba1\", \n  \"projectId\": \"d0725a0c-d42c-4326-b714-1ea054c0e1a3\",\n  \"date\": \"2025-05-01T14:00:00Z\",\n  \"type\": \"CALL\", \n  \"notes\": \"SADiscussed project requirements and timeline.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/log/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"log",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET SINGLE LOG",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZTk0MjFmNi02NzU3LTQzYTgtYTE2NS1kZmU3NDk2NmY3MzMiLCJlbWFpbCI6ImhhbW1hZHc3QHlhaG9vLmNvbSIsIm5hbWUiOiJIYW1tYWQgU2FkaSIsImlhdCI6MTc0NTY1MzYyNCwiZXhwIjoxNzQ4MjQ1NjI0fQ.18dU0louWKDYvwGmvNHX-gCe3gQqIh2NbxuzkambTGA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"clientId\": \"f9b1bf53-fb14-46c3-9fe3-de2a4e248ba1\", \n  \"projectId\": \"d0725a0c-d42c-4326-b714-1ea054c0e1a3\",\n  \"date\": \"2025-05-01T14:00:00Z\",\n  \"type\": \"CALL\", \n  \"notes\": \"SADiscussed project requirements and timeline.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/log/8c1d7aa5-6156-44e0-bb91-88d4280cd6cf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"log",
+								"8c1d7aa5-6156-44e0-bb91-88d4280cd6cf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE SINGLE LOG",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZTk0MjFmNi02NzU3LTQzYTgtYTE2NS1kZmU3NDk2NmY3MzMiLCJlbWFpbCI6ImhhbW1hZHc3QHlhaG9vLmNvbSIsIm5hbWUiOiJIYW1tYWQgU2FkaSIsImlhdCI6MTc0NTY1MzYyNCwiZXhwIjoxNzQ4MjQ1NjI0fQ.18dU0louWKDYvwGmvNHX-gCe3gQqIh2NbxuzkambTGA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"clientId\": \"f9b1bf53-fb14-46c3-9fe3-de2a4e248ba1\", \n  \"projectId\": \"d0725a0c-d42c-4326-b714-1ea054c0e1a3\",\n  \"date\": \"2025-05-01T14:00:00Z\",\n  \"type\": \"CALL\", \n  \"notes\": \"SADiscussed project requirements and timeline.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/log/8c1d7aa5-6156-44e0-bb91-88d4280cd6cf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"log",
+								"8c1d7aa5-6156-44e0-bb91-88d4280cd6cf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reminder",
+			"item": [
+				{
+					"name": "CREATE REMINDER",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZTk0MjFmNi02NzU3LTQzYTgtYTE2NS1kZmU3NDk2NmY3MzMiLCJlbWFpbCI6ImhhbW1hZHc3QHlhaG9vLmNvbSIsIm5hbWUiOiJIYW1tYWQgU2FkaSIsImlhdCI6MTc0NTY1MzYyNCwiZXhwIjoxNzQ4MjQ1NjI0fQ.18dU0louWKDYvwGmvNHX-gCe3gQqIh2NbxuzkambTGA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Follow up on project payment\",\n  \"dueDate\": \"2025-05-10T15:00:00Z\",\n  \"completed\": false,\n  \"notes\": \"Call the client to confirm payment status.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/reminder/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"reminder",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL REMINDER",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZTk0MjFmNi02NzU3LTQzYTgtYTE2NS1kZmU3NDk2NmY3MzMiLCJlbWFpbCI6ImhhbW1hZHc3QHlhaG9vLmNvbSIsIm5hbWUiOiJIYW1tYWQgU2FkaSIsImlhdCI6MTc0NTY1MzYyNCwiZXhwIjoxNzQ4MjQ1NjI0fQ.18dU0louWKDYvwGmvNHX-gCe3gQqIh2NbxuzkambTGA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": \"some-user-id\",\n  \"clientId\": \"some-client-id\",\n  \"projectId\": \"some-project-id\",\n  \"title\": \"Follow up on project payment\",\n  \"dueDate\": \"2025-05-10T15:00:00Z\",\n  \"completed\": false,\n  \"notes\": \"Call the client to confirm payment status.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/reminder/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"reminder",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET SINGLE REMINDER",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZTk0MjFmNi02NzU3LTQzYTgtYTE2NS1kZmU3NDk2NmY3MzMiLCJlbWFpbCI6ImhhbW1hZHc3QHlhaG9vLmNvbSIsIm5hbWUiOiJIYW1tYWQgU2FkaSIsImlhdCI6MTc0NTY1MzYyNCwiZXhwIjoxNzQ4MjQ1NjI0fQ.18dU0louWKDYvwGmvNHX-gCe3gQqIh2NbxuzkambTGA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": \"some-user-id\",\n  \"clientId\": \"some-client-id\",\n  \"projectId\": \"some-project-id\",\n  \"title\": \"Follow up on project payment\",\n  \"dueDate\": \"2025-05-10T15:00:00Z\",\n  \"completed\": false,\n  \"notes\": \"Call the client to confirm payment status.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/reminder/19c53164-ec30-4820-b06d-36ca1590c4a3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"reminder",
+								"19c53164-ec30-4820-b06d-36ca1590c4a3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE SINGLE REMINDER",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZTk0MjFmNi02NzU3LTQzYTgtYTE2NS1kZmU3NDk2NmY3MzMiLCJlbWFpbCI6ImhhbW1hZHc3QHlhaG9vLmNvbSIsIm5hbWUiOiJIYW1tYWQgU2FkaSIsImlhdCI6MTc0NTY1MzYyNCwiZXhwIjoxNzQ4MjQ1NjI0fQ.18dU0louWKDYvwGmvNHX-gCe3gQqIh2NbxuzkambTGA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": \"some-user-id\",\n  \"clientId\": \"some-client-id\",\n  \"projectId\": \"some-project-id\",\n  \"title\": \"Follow up on project payment\",\n  \"dueDate\": \"2025-05-10T15:00:00Z\",\n  \"completed\": false,\n  \"notes\": \"Call the client to confirm payment status.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/reminder/19c53164-ec30-4820-b06d-36ca1590c4a3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"reminder",
+								"19c53164-ec30-4820-b06d-36ca1590c4a3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

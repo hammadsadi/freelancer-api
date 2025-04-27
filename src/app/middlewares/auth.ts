@@ -12,8 +12,8 @@ const auth = async (
   next: NextFunction,
 ) => {
   try {
-    const token = req.headers.authorization;
-
+    const token = req.cookies.freelance_token;
+    console.log('auth', token);
     // Check Token
     if (!token) {
       throw new ApiError(status.UNAUTHORIZED, 'You are not authorized!');
