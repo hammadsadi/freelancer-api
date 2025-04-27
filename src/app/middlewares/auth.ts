@@ -12,7 +12,15 @@ const auth = async (
   next: NextFunction,
 ) => {
   try {
-    const token = req.headers.authorization;
+    let token;
+    if (
+      req.headers.authorization &&
+      req.headers.authorization.startsWith('Bearer')
+    ) {
+      token = req.headers.authorization.split(' ')[1];
+    } else if (req.cookies && req.cookies.freelance_token) {
+      token = req.cookies.freelance_token;
+    }
     // Check Token
     if (!token) {
       throw new ApiError(status.UNAUTHORIZED, 'You are not authorized!');
